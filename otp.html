@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <link
+      href="./assets/css/fonts.css"
+      rel="stylesheet"
+    />
+    <link href="./assets/css/index.css" rel="stylesheet" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="content">
+          <img src="assets/img/decorgif.gif">
+          <span>Welcome</span>
+          <h1>Let's Bring Your Event Vision to Life</h1>
+          <p>
+            Our platform helps you plan and manage events easily. From registration to schedules, everthing in one place. Whether it's a birthday, wedding or corporate party, we 
+	    make event management hassle-free!
+          </p>
+          <div class="btns">
+            <button class="form-btn">
+              <a href="registration.html">Register</a>
+            </button>
+            <button class="form-btn">
+                <a href="login.html">Login</a>
+              </button>
+          </div>
+        </div>
+      </div>
+   
+      <div class="right">
+        <div class="form">
+          <h2>OTP</h2>
+          <p>Enter the OTP sent to your registered email</p>
+          <form>
+            <p id="message"></p>
+            <div class="input-group">
+              <input
+                type="text"
+                id="otp"
+                name="otp"
+                required
+                placeholder="OTP"
+              />
+            </div>
+            <button type="submit" class="form-btn">
+                <a href="forget.html">Verify</a>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script defer>
+    //Show error or success message recevied from backend through url
+    const searchParams = new URLSearchParams(window.location.search);
+    const msg = searchParams.get("message");
+    const status = searchParams.get("status") || "error";
+    //Show message to user
+    if (msg) {
+      const messageEl = document.getElementById("message");
+      messageEl.textContent = msg;
+      messageEl.className = status;
+    }
+  </script>
+</html>

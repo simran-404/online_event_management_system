@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <style>
+      .input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+  padding-right: 40px; /* Leave space for the eye icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+}
+
+.toggle-password:hover {
+  color: #555;
+}
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group input {
+  width: 100%;
+  padding-right: 40px; /* Leave space for the eye icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+}
+
+.toggle-password:hover {
+  color: #555;
+}
+
+
+    </style>
+    <link
+      href="./assets/css/fonts.css"
+      rel="stylesheet"
+    />
+    <link href="./assets/css/index.css" rel="stylesheet" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="content">
+          <img src="assets/img/decorgif.gif">
+          <span>Welcome</span>
+          <h1>Let's Bring Your Event Vision to Life</h1>
+          <p>
+            Our platform helps you plan and manage events easily. From registration to schedules, everthing in one place. Whether it's a birthday, wedding or corporate party, we 
+	    make event management hassle-free!
+          </p>
+          <div class="btns">
+            <button class="form-btn">
+              <a href="registration.html">Register</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--LOGIN FORM-->
+      <div class="right">
+        <div class="form">
+          <h2>Login</h2>
+          <p>Welcome back!<br>Log in to access your account.</p>
+          <form method="POST" action="login.php">
+            <p id="message"></p>
+            <div class="input-group">
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                placeholder="Username"
+              />
+            </div>
+            <div class="input-group">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="Password"
+              />
+              <span class="toggle-password" onclick="togglePassword('password',this)">
+              <img src="assets/img/closeeye.webp" height="30">
+              </span>
+            </div>            
+            <div class="forgot-password">
+              <a href="verify.html">Forgot Password?</a>
+            </div>
+            <button type="submit" class="form-btn">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script defer>
+    //Show error or success message recevied from backend through url
+    const searchParams = new URLSearchParams(window.location.search);
+    const msg = searchParams.get("message");
+    const status = searchParams.get("status") || "error";
+    //Show message to user
+    if (msg) {
+      const messageEl = document.getElementById("message");
+      messageEl.textContent = msg;
+      messageEl.className = status;
+    }
+    function togglePassword(fieldId, eyeIcon) {
+  var passwordField = document.getElementById(fieldId);
+  
+  if (passwordField.type === "password") {
+    passwordField.type = "text";
+    eyeIcon.children[0].src = "assets/img/eye.png"; // Change icon to indicate visibility
+  } else {
+    passwordField.type = "password";
+    eyeIcon.children[0].src = "assets/img/closeeye.webp"; // Revert to hidden state icon
+  }
+}
+  </script>
+</html>
