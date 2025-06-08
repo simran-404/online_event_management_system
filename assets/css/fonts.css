@@ -1,0 +1,15 @@
+/* DM Sans font */
+@font-face {
+  font-family: 'DM Sans';
+  src: url('../fonts/dmsans/DMSans-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 200 300 400 500 600 1000;  /* Define the range of font weights */
+  font-display: swap;
+}
+
+/* Syne font */
+@font-face {
+  font-family: 'Syne';
+  src: url('../fonts/syne/Syne-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 200 300 400 500 600 800;  /* Define the range of font weights */
+  font-display: swap;
+}
