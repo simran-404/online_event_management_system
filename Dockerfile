@@ -1,10 +1,11 @@
-FROM php:8.2-apache
+FROM php:8.1-cli
 
-# Enable PostgreSQL
-RUN docker-php-ext-install pdo pdo_pgsql
+# Install PostgreSQL support
+RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo_pgsql pgsql
 
-# Copy project files
-COPY . /var/www/html/
+# Copy files
+COPY . /var/www/html
+WORKDIR /var/www/html
 
-# Optional: Enable mod_rewrite if needed
-RUN a2enmod rewrite
+# Start PHP server
+CMD ["php", "-S", "0.0.0.0:10000", "-t", "."]
