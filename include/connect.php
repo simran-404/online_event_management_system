@@ -1,9 +1,9 @@
 <?php
 // Database credentials
-$host = "dpg-d13tkqq4d50c73eb7ck0-a";
+$host = "db.cyjgtavvcsrtvehmnjmz.supabase.co";
 $port = "5432";
-$dbname = "eventdb_xjfq";
-$username = "eventdb_xjfq_user";
+$dbname = "postgres";
+$username = "postgres";
 $password = "yT1ax0PzKprZ56RWZtdrpB2eiBr4f1it";
 
 // Create a connection string
