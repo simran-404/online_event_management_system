@@ -6,10 +6,10 @@ services:
     dockerfilePath: Dockerfile
     envVars:
       - key: DB_HOST
-        value: dpg-d13tkqq4d50c73eb7ck0-a
+        value: db.ptbjuddbvzradlqzsopf.supabase.co
       - key: DB_NAME
-        value: eventdb_xjfq
+        value: postgres
       - key: DB_USER
-        value: eventdb_xjfq_user
+        value: postgres
       - key: DB_PASS
-        value: yT1ax0PzKprZ56RWZtdrpB2eiBr4f1it
+        value: simranloveyash
